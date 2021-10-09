@@ -1,3 +1,13 @@
 .root {
-  @apply grid grid-cols-3 grid-rows-2;
+  @apply grid gap-0 grid-cols-3 grid-rows-2;
+
+  & > * {
+    @apply row-span-1 overflow-hidden;
+    max-height: 800px;
+
+    @screen lg {
+      height: inherit;
+    }
+  }
+
 }
