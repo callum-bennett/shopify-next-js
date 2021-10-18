@@ -21,7 +21,10 @@ export const getStaticProps = async ({
   params,
 }: GetStaticPropsContext<{ slug: string }>) => {
   const config = getConfig();
-  const { product } = await getProduct(config);
+  const { product } = await getProduct({
+    config,
+    variables: { slug: params?.slug },
+  });
   return {
     props: {
       product,
@@ -32,7 +35,11 @@ export const getStaticProps = async ({
 export default function ProductSlug({
   product,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  return <div>{product.name}</div>;
+  return <div>
+    {product.name}
+    {product.path}
+    {product.slug}
+  </div>;
 }
 
 ProductSlug.Layout = Layout;
