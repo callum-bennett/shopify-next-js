@@ -9,8 +9,10 @@
     "build:css": "postcss assets/main.css -o assets/main_browser.css"
   },
   "dependencies": {
+    "@types/js-cookie": "^3.0.1",
     "body-scroll-lock": "^4.0.0-beta.0",
     "classnames": "^2.3.1",
+    "js-cookie": "^3.0.1",
     "keen-slider": "^6.6.3",
     "next": "11.1.0",
     "react": "17.0.2",
